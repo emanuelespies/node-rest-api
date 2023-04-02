@@ -2,7 +2,9 @@
 A simple node rest api for todos
 
 # how to use it
-Run `npm start`
+Run `npm install` to install dependencies
+
+Run `npm start` to start the app. Check `localhost:3000`
 
 Connect to the database, see details on `services/db.js`
 
