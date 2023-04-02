@@ -1,12 +1,14 @@
-const app = require('express');
+const express = require('express');
 const cors = require('cors');
-const router = require('./routes');
 const appError = require('./utils/appError');
 const errorHandler = require('./utils/errorHandler');
 
-app.use(api, router);
+const app = express();
 
-app.all('*', (req, res, next)=> {
+app.use(express.json());
+app.use("/", require('./routes'));
+
+app.all('*', (req, res, next) => {
   next(new appError(`The url ${req.originalUrl} does not exist.`, 404));
 });
 
